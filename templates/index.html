@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/style.css" />
+		<script
+			src="https://kit.fontawesome.com/2567eb5e72.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap"
+			rel="stylesheet"
+		/>
+		<title>CodeClan Library</title>
+	</head>
+	<body>
+		<header class="header">
+			<h1>CodeClan Library</h1>
+		</header>
+		<main>
+			<ul class="list-headings">
+				<li>Title</li>
+				<li>Author</li>
+				<li>Genre</li>
+				<li>Available</li>
+			</ul>
+			{% for book in books %}
+			<a href="/single_book/{{loop.index-1}}">
+				<ul class="book-list">
+					<li>{{ book.title }}</li>
+					<li>{{ book.author }}</li>
+					<li>{{ book.genre }}</li>
+					<li>
+						{% if book.available == True %}<span
+							><i class="fa-regular fa-circle-check"></i></span
+						>{% else %}<span></span>{% endif %}
+					</li>
+				</ul>
+			</a>
+			{% endfor %}
+		</main>
+	</body>
+</html>
