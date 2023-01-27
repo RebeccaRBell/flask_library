@@ -7,3 +7,6 @@ book2 = Book("All My Friends are Superheroes", "Andrew Kaufman", "Fiction", True
 book3 = Book("Conspiracies", "Andy Thomas", "Non-Fiction", False)
 
 books = [book1, book2, book3]
+
+def add_book_to_library(add_new_book):
+        books.append(add_new_book)

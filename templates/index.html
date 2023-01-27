@@ -18,26 +18,60 @@
 			<h1>CodeClan Library</h1>
 		</header>
 		<main>
-			<ul class="list-headings">
-				<li>Title</li>
-				<li>Author</li>
-				<li>Genre</li>
-				<li>Available</li>
-			</ul>
-			{% for book in books %}
-			<a href="/single_book/{{loop.index-1}}">
-				<ul class="book-list">
-					<li>{{ book.title }}</li>
-					<li>{{ book.author }}</li>
-					<li>{{ book.genre }}</li>
-					<li>
-						{% if book.available == True %}<span
-							><i class="fa-regular fa-circle-check"></i></span
-						>{% else %}<span></span>{% endif %}
-					</li>
+			<div class="add-new-book">
+				<h3>Add a New Book</h3>
+				<form action="/" method="post">
+					<label for="title">Title</label>
+					<input
+						class="text-input"
+						type="text"
+						name="title"
+						placeholder="Insert Book Title"
+					/>
+					<label for="author">Author</label>
+					<input
+						class="text-input"
+						type="text"
+						name="author"
+						placeholder="Insert Name of Author"
+					/>
+					<label for="genre">Genre</label>
+					<input
+						class="text-input"
+						type="text"
+						name="genre"
+						placeholder="Insert Book Genre"
+					/>
+					<label for="'checked">Currently Available?</label>
+					<label for="available">Yes</label>
+					<input type="radio" value="checked" name="available" />
+					<label for="available">No</label>
+					<input type="radio" value="notchecked" name="available" />
+					<input class="submit-button" type="submit" value="Add Book" />
+				</form>
+			</div>
+			<div class="book-list-background">
+				<ul class="list-headings">
+					<li>Title</li>
+					<li>Author</li>
+					<li>Genre</li>
+					<li>Available</li>
 				</ul>
-			</a>
-			{% endfor %}
+				{% for book in books %}
+				<a href="/single_book/{{loop.index-1}}">
+					<ul class="book-list">
+						<li>{{ book.title }}</li>
+						<li>{{ book.author }}</li>
+						<li>{{ book.genre }}</li>
+						<li>
+							{% if book.available == True %}<span
+								><i class="fa-regular fa-circle-check"></i></span
+							>{% else %}<span></span>{% endif %}
+						</li>
+					</ul>
+				</a>
+				{% endfor %}
+			</div>
 		</main>
 	</body>
 </html>

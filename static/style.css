@@ -3,7 +3,7 @@ body {
 }
 
 .header{
-        width: 70%;
+        width: 50%;
         height: 100px;
         text-align: center;
         margin: auto;
@@ -22,6 +22,54 @@ main {
         width: 90%;
         margin:  auto;
 }
+.add-new-book{
+        background-color:rgb(230, 230, 230);
+        padding-top: 20px;
+        padding-bottom: 40px;
+        border-radius: 20px;
+}
+.add-new-book h3 {
+       text-align: center;
+        padding-bottom: 20px;
+        font-weight: 400;
+        font-size: 22px;
+}
+form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+}
+form .text-input {
+        width: 180px;
+        height: 30px;
+        margin-right: 20px;
+        border-radius: 10px;
+        border: none;
+        background-color: whitesmoke;
+}
+form label {
+        margin-right: 5px;
+}
+form input {
+        padding: 15px;
+}
+.submit-button {
+width: 100px;
+height: 35px;
+padding: 0px;
+margin-left: 10px;
+align-items: center;
+border-radius: 10px;
+border: none;
+background-color: rgb(224, 99, 11);
+color: white;
+font-family: 'Be Vietnam Pro', sans-serif;
+}
+.book-list-background {
+        margin-top: 70px;
+}
 .list-headings{
         display: flex;
         flex-flow: row wrap;
@@ -32,14 +80,16 @@ main {
 .list-headings li {
         width: 250px;
         text-align: center;
-        background-color: rgba(209, 100, 50, 0.795);
+        background-color: rgb(233, 233, 233);
         padding-top: 5px;
         padding-bottom: 5px;
         border-radius: 10px;
-        color: white;
+        color: rgb(83, 83, 83);
         margin-left: 10px;
         margin-right: 10px;
+        font-weight: 800;
 }
+
 .book-list{
 display: flex;
 justify-content: center;
