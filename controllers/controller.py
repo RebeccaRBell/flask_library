@@ -1,7 +1,7 @@
 from flask import render_template, request  # ADDED
 from app import app
 from models.book import Book
-from models.book_list import books, add_book_to_library
+from models.book_list import books, add_book_to_library, remove_book_from_list
 
 
 @app.route("/")
@@ -28,4 +28,10 @@ def add_book():
         new_book_title, new_book_author, new_book_genre, new_book_available
     )
     add_book_to_library(add_new_book)
+    return render_template("index.html", books=books)
+
+
+@app.route("/delete/<int:index>", methods=["POST"])
+def delete_book_from_list(index):
+    remove_book_from_list(index)
     return render_template("index.html", books=books)

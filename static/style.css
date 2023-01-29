@@ -7,7 +7,7 @@ body {
         height: 100px;
         text-align: center;
         margin: auto;
-        padding: 30px;
+        padding: 50px 30px 30px 30px;
 }
 .header h1 {
         font-weight: 200;
@@ -78,7 +78,7 @@ font-family: 'Be Vietnam Pro', sans-serif;
         list-style: none;
 }
 .list-headings li {
-        width: 250px;
+        width: 200px;
         text-align: center;
         background-color: rgb(233, 233, 233);
         padding-top: 5px;
@@ -99,7 +99,7 @@ margin: auto;
 border-bottom: 1px solid rgba(195, 92, 52, 0.45);
 }
 .book-list li {
-        width: 250px;
+        width: 200px;
         text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -113,6 +113,24 @@ a {
         text-decoration: none;
         color: black;
         font-weight: 400;
+}
+form button{
+        border: none;
+        background-color: transparent;
+}
+.remove-book{
+        border:none;
+        background-color: transparent;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0px;
+        padding: 0px;
+}
+.remove-book:hover{
+color: rgb(208, 46, 18);
+font-size: 22px;
+font-weight: bolder;
+cursor: pointer;
 }
 
 /* SINGLE BOOK PAGE */

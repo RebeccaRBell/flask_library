@@ -25,8 +25,9 @@
 					<input
 						class="text-input"
 						type="text"
-						name="title"
-						placeholder="Insert Book Title"
+						name="title"						
+                                                placeholder="Insert Book Title"
+						required
 					/>
 					<label for="author">Author</label>
 					<input
@@ -34,6 +35,7 @@
 						type="text"
 						name="author"
 						placeholder="Insert Name of Author"
+						required
 					/>
 					<label for="genre">Genre</label>
 					<input
@@ -41,12 +43,13 @@
 						type="text"
 						name="genre"
 						placeholder="Insert Book Genre"
+						required
 					/>
 					<label for="'checked">Currently Available?</label>
 					<label for="available">Yes</label>
 					<input type="radio" value="checked" name="available" />
 					<label for="available">No</label>
-					<input type="radio" value="notchecked" name="available" />
+					<input type="radio" value="not_checked" name="available" />
 					<input class="submit-button" type="submit" value="Add Book" />
 				</form>
 			</div>
@@ -56,18 +59,25 @@
 					<li>Author</li>
 					<li>Genre</li>
 					<li>Available</li>
+					<li>Remove Book</li>
 				</ul>
 				{% for book in books %}
-				<a href="/single_book/{{loop.index-1}}">
 					<ul class="book-list">
-						<li>{{ book.title }}</li>
-						<li>{{ book.author }}</li>
-						<li>{{ book.genre }}</li>
-						<li>
+                                                <a href="/single_book/{{loop.index-1}}">
+						<li>{{ book.title }}</li></a>
+                                                <a href="/single_book/{{loop.index-1}}">
+						<li>{{ book.author }}</li></a>
+                                                <a href="/single_book/{{loop.index-1}}">
+						<li>{{ book.genre }}</li></a>
+						<li><a href="/single_book/{{loop.index-1}}">
 							{% if book.available == True %}<span
 								><i class="fa-regular fa-circle-check"></i></span
 							>{% else %}<span></span>{% endif %}
-						</li>
+						</li></a>
+                                                <li>
+                                                <form action="/delete/{{loop.index-1}}" method="post">
+                                                <input type="submit" class="remove-book" name="remove" value="X">
+                                                </form></li>
 					</ul>
 				</a>
 				{% endfor %}
